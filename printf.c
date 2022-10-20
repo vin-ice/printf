@@ -25,8 +25,10 @@ int _printf(const char *format, ...)
     };
     
     va_start(pa, format);
+    if (!format)
+        return (-1);
     /*print format*/
-    while (format && format[i] != 27 && format[i] != '\0'){
+    while (format && format[i]){
         if (format[i] != '%')
         {
             _putchar(format[i]);
