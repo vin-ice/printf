@@ -1,7 +1,7 @@
 # Printf
 ## Resources
-    - [Secrets of printf](https://alx-intranet.hbtn.io/rltoken/7Vw7aUWgwC7JYUrqI4bh4Q)
-    - `printf (3) `
+[Secrets of printf](https://alx-intranet.hbtn.io/rltoken/7Vw7aUWgwC7JYUrqI4bh4Q)
+`printf (3) `
 ## Requirements
 ### General
     - Allowed editors: vi, vim, emacs.
