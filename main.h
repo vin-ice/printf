@@ -25,6 +25,5 @@ int print_r(va_list);
 int print_b(va_list);
 int print_p(va_list);
 int print_unsigned(unsigned long);
-int _pitoo(unsigned long int);
 
 #endif /*_PRINTF_H*/

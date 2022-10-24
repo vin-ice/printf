@@ -35,9 +35,18 @@ int print_i(va_list vi)
  */
 int print_o(va_list vo)
 {
-    unsigned long  num = va_arg(vo, unsigned long);
-    return (_pitoo(num));
-} 
+    unsigned int n, a[20];
+    int count, i;
+
+	n = va_arg(vo, unsigned int);
+	for (i = 0; n > 0; n /= 8, i += 1)
+        a[i] = n % 8;
+    for (count = 0, i -= 1; i >= 0; i--, count += 1)
+    {
+        _putchar(a[i] + '0');
+    }
+	return (count);
+}
 /**
  * print_u - print unsigned integer
  * @vu: pointer to arguments list
@@ -58,43 +67,19 @@ int print_u(va_list vu)
  */
 int print_b(va_list b)
 {
-	unsigned int n, m, i, sum;
-	unsigned int a[32];
-	int count;
+	unsigned int a[32], n;
+	int count, i;
 
-	n = va_arg(b, unsigned int);
-	m = 2147483648; /* (2 ^ 31) */
-	a[0] = n / m;
-	for (i = 1; i < 32; i++)
+	n = va_arg(b, unsigned int);    
+	for (i = 0; n > 0; n /= 2, i++)
+		a[i] = n % 2;
+	for (count = 0, i -= 1; i >= 0; count += 1, i--)
 	{
-		m /= 2;
-		a[i] = (n / m) % 2;
-	}
-	for (i = 0, sum = 0, count = 0; i < 32; i++)
-	{
-		sum += a[i];
-		if (sum || i == 31)
-		{
-			_putchar('0' + a[i]);
-			count++;
-		}
+		_putchar(a[i] + '0');
 	}
 	return (count);
 }
-/**
- * _pitoo - converts int to octal and prints
- * @n: int
- * 
- * Return: returns size of printed output
- */
-int _pitoo(unsigned long n)
-{
-    int pos, count;
 
-    for (pos = 1, count = 0; n > 0 ; n /= 8, pos *= 10)
-        count +=_putchar(((n % 8) * pos) + '0') ;
-    return (count);
-}
 /**
  * print_unsigned - prints unsigned int
  * n: integer

@@ -8,12 +8,12 @@
 int print_s(va_list s)
 {
     int count;
-    char * str = va_arg(s, char *);
+    char *str = va_arg(s, char *);
     
     if (str == NULL)
         str = "(nil)";
     for (count = 0; str[count] ; count++)
-        _putchar(str[count]);
+		_putchar(str[count]);
     return (count);
 }
 
@@ -31,12 +31,13 @@ int print_c(va_list c)
     count += _putchar(ch);
     return (count);
 }
+
 /**
  * hex_print - prints a char's ascii value in uppercase hex
  * @c: char to print
  *
  * Return: number of chars printed (always 2)
- */
+ **/
 static int hex_print(char c)
 {
 	int count;
@@ -59,7 +60,7 @@ static int hex_print(char c)
  * @S: string to print
  *
  * Return: number of chars printed
- */
+ **/
 int print_S(va_list S)
 {
 	unsigned int i;
@@ -90,7 +91,7 @@ int print_S(va_list S)
  * @r: string to print
  *
  * Return: number of chars printed
- */
+ **/
 int print_r(va_list r)
 {
 	char *str;
